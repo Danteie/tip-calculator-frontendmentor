@@ -5,7 +5,7 @@ import Display from './Component/Display/Display';
 function App() {
   return (
     <div className="App">
-      <div>
+      <div className='title-text'>
         <h1>SPLI</h1>
         <h1>TTER</h1>
       </div>

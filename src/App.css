@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Space Mono', monospace;
 }
 
 .App {
@@ -12,6 +15,12 @@
   background-color: hsl(185, 41%, 84%);
 }
 
+.title-text{
+  margin-bottom: 4rem;
+  color: hsl(183, 100%, 15%);
+  letter-spacing: 10px;
+}
+
 .calculator-body{
   display: flex;
   background-color: white;
@@ -19,4 +28,8 @@
   padding: 3rem;
   border-radius: 15px;
   gap: 2rem
+}
+
+.white{
+  color: white
 }
