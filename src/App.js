@@ -1,8 +1,19 @@
+import { useState } from 'react';
 import './App.css';
 import Calculator from './Component/Calculator/Calculator';
 import Display from './Component/Display/Display';
 
+
 function App() {
+ 
+  const [button,setButton] = useState();
+
+  const test = (i) => {
+    setButton(() => i)
+    console.log(i);
+  }
+
+
   return (
     <div className="App">
       <div className='title-text'>
@@ -10,8 +21,8 @@ function App() {
         <h1>TTER</h1>
       </div>
       <div className='calculator-body'>
-        <Calculator/>
-        <Display/>
+        <Calculator test={test}/>
+        <Display button={button}/>
       </div>
       
     </div>

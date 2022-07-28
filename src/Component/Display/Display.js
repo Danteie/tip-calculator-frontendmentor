@@ -1,7 +1,9 @@
 import React from "react";
 import './Display.css'
 
-export default function Display() {
+export default function Display({button}) {
+
+
   return (
     <div className="display">
         <div className="display-all">
@@ -10,7 +12,7 @@ export default function Display() {
                     <p className="white">Tip Amount</p>
                     <p>/ person</p>
                 </div>
-                    <h1 className="display-total">$0.00</h1>
+                    <h1 className="display-total">${button}</h1>
             </div>
             <div className="display-screen">
                 <div>
