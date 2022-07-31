@@ -1,22 +1,42 @@
 import React from "react";
 import './Calculator.css'
-import { useState } from "react";
+import { useState,useEffect  } from "react";
 
-export default function Calculator({test}) {
+export default function Calculator({displayTotal}) {
 
   const [button,setButton] = useState(15);
-
+  const [bill,setBill] = useState(0.00);
+  const [people,setPeople] = useState(0);
+ 
+  
 
   function inputBill(event){
     const inputText = event.target.value
-    console.log(inputText);
+    setBill(prevCount => prevCount = inputText)
   }
+
+  function inputPeople(event){
+    const inputPeople = event.target.value
+    setPeople(prevPeople => prevPeople = inputPeople)
+    console.log(people);
+  }
+  
 
   function buttonPress(event){
     const buttonValue = event.target.innerHTML;
-    setButton(buttonValue)
-    test(button)
+    setButton(prevButton => prevButton = buttonValue)
   }
+
+
+  useEffect(()=>{
+    const total  = bill * parseInt(button)/100
+    const totalPeople = total / people
+    displayTotal(total,totalPeople)
+  },[bill,button,people])
+
+  
+
+ 
 
 
   return (
@@ -33,7 +53,7 @@ export default function Calculator({test}) {
               <div className="div3"><button onClick={buttonPress} id="default">15%</button></div>
               <div className="div4"><button onClick={buttonPress}>25%</button></div>
               <div className="div5"><button onClick={buttonPress}>50%</button></div>
-              <div className="div6"><button onClick={buttonPress}>Custom</button></div>
+              <div className="div6"><button >Custom</button></div>
           </div>
       </div>
       <div>
@@ -41,7 +61,7 @@ export default function Calculator({test}) {
               <p>Number of People</p>
               <p id='error-people'>Can't be zero</p>
           </div>
-        <input type="text" className="number-people"/>
+        <input type="text" className="number-people" onChange={inputPeople}/>
       </div>  
     </div>
   );

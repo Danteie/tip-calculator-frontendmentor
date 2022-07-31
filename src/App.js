@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState} from 'react';
 import './App.css';
 import Calculator from './Component/Calculator/Calculator';
 import Display from './Component/Display/Display';
@@ -6,11 +6,13 @@ import Display from './Component/Display/Display';
 
 function App() {
  
-  const [button,setButton] = useState();
+  const [total,setTotal] = useState();
+  const [totalPeople,setPeople] = useState();
 
-  const test = (i) => {
-    setButton(() => i)
-    console.log(i);
+  const displayTotal = (t,p) => {
+    setTotal(prevTotal => prevTotal = t)
+    setPeople(prevPeople => prevPeople = p)
+
   }
 
 
@@ -21,8 +23,8 @@ function App() {
         <h1>TTER</h1>
       </div>
       <div className='calculator-body'>
-        <Calculator test={test}/>
-        <Display button={button}/>
+        <Calculator displayTotal={displayTotal}/>
+        <Display total={total} totalPeople={totalPeople}/>
       </div>
       
     </div>

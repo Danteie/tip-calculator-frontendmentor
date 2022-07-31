@@ -1,7 +1,7 @@
 import React from "react";
 import './Display.css'
 
-export default function Display({button}) {
+export default function Display({total,totalPeople}) {
 
 
   return (
@@ -12,14 +12,14 @@ export default function Display({button}) {
                     <p className="white">Tip Amount</p>
                     <p>/ person</p>
                 </div>
-                    <h1 className="display-total">${button}</h1>
+                    <h1 className="display-total">${totalPeople}</h1>
             </div>
             <div className="display-screen">
                 <div>
                     <p className="white">Total</p>
                     <p>/ person</p>
                 </div>
-                    <h1 className="display-total">$0.00</h1>
+                    <h1 className="display-total">${total}</h1>
             </div>
         </div>
         <button>Restart</button>
