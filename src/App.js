@@ -12,9 +12,9 @@ function App() {
   const displayTotal = (t,p) => {
     setTotal(prevTotal => prevTotal = t)
     setPeople(prevPeople => prevPeople = p)
-
   }
 
+  
 
   return (
     <div className="App">

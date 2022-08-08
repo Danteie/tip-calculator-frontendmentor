@@ -3,6 +3,10 @@ import './Display.css'
 
 export default function Display({total,totalPeople}) {
 
+    function refreshPage(){
+        window.location.reload();
+    } 
+
 
   return (
     <div className="display">
@@ -22,7 +26,7 @@ export default function Display({total,totalPeople}) {
                     <h1 className="display-total">${total}</h1>
             </div>
         </div>
-        <button>Restart</button>
+        <button onClick={refreshPage}>Restart</button>
     </div>
   );
 }

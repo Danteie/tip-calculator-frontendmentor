@@ -4,10 +4,10 @@ import { useState,useEffect  } from "react";
 
 export default function Calculator({displayTotal}) {
 
-  const [button,setButton] = useState(15);
+  const [button,setButton] = useState(15); // default state for tip button
   const [custom,setCustom] = useState(); // Custom input for tip %
-  const [bill,setBill] = useState(0.00);
-  const [people,setPeople] = useState(1);
+  const [bill,setBill] = useState(0.00); // input of bill
+  const [people,setPeople] = useState(1); // input nuber of people
  
 
   function inputBill(event){
@@ -26,11 +26,20 @@ export default function Calculator({displayTotal}) {
   }
   
   function buttonPress(event){
+    //default style for button
+    const defuatlStyle = document.getElementsByClassName('default');
+    defuatlStyle[0].classList.remove('default')
+    const buttonStyle = event.target;
+    buttonStyle.classList.add('default')
+
+    //button value
     const buttonValue = event.target.innerHTML;
     setButton(prevButton => prevButton = buttonValue)
   }
 
   function customPress(event){
+    const defuatlStyle = document.getElementsByClassName('default');
+    defuatlStyle[0].classList.remove('default')
     const customInput = event.target.value;
     setCustom(prevCustom => prevCustom = customInput)
   }
@@ -60,7 +69,7 @@ export default function Calculator({displayTotal}) {
           <div className="parent">
               <div className="div1"><button onClick={buttonPress}>5%</button></div>
               <div className="div2"> <button onClick={buttonPress}>10%</button></div>
-              <div className="div3"><button onClick={buttonPress} id="default">15%</button></div>
+              <div className="div3"><button onClick={buttonPress} className="default">15%</button></div>
               <div className="div4"><button onClick={buttonPress}>25%</button></div>
               <div className="div5"><button onClick={buttonPress}>50%</button></div>
               <div className="div6">
