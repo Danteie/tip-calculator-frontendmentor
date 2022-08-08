@@ -5,10 +5,10 @@ import { useState,useEffect  } from "react";
 export default function Calculator({displayTotal}) {
 
   const [button,setButton] = useState(15);
+  const [custom,setCustom] = useState(); // Custom input for tip %
   const [bill,setBill] = useState(0.00);
-  const [people,setPeople] = useState(0);
+  const [people,setPeople] = useState(1);
  
-  
 
   function inputBill(event){
     const inputText = event.target.value
@@ -17,28 +17,38 @@ export default function Calculator({displayTotal}) {
 
   function inputPeople(event){
     const inputPeople = event.target.value
+    if(!inputPeople){
+      document.getElementById("error-people").style.opacity = 1;
+    }else{
+      document.getElementById("error-people").style.opacity = 0;
+    }
     setPeople(prevPeople => prevPeople = inputPeople)
-    console.log(people);
   }
   
-
   function buttonPress(event){
     const buttonValue = event.target.innerHTML;
     setButton(prevButton => prevButton = buttonValue)
   }
 
+  function customPress(event){
+    const customInput = event.target.value;
+    setCustom(prevCustom => prevCustom = customInput)
+  }
+
 
   useEffect(()=>{
-    const total  = bill * parseInt(button)/100
+    let total = ''
+    if(!custom){
+      total  = bill * parseInt(button)/100
+    }else{
+      total  = bill * parseInt(custom)/100
+    }
+    
     const totalPeople = total / people
-    displayTotal(total,totalPeople)
-  },[bill,button,people])
+    displayTotal(total.toFixed(2),totalPeople.toFixed(2))
+  },[bill,button,people,custom,displayTotal])
 
   
-
- 
-
-
   return (
     <div className="calculator">
       <div>
@@ -53,7 +63,8 @@ export default function Calculator({displayTotal}) {
               <div className="div3"><button onClick={buttonPress} id="default">15%</button></div>
               <div className="div4"><button onClick={buttonPress}>25%</button></div>
               <div className="div5"><button onClick={buttonPress}>50%</button></div>
-              <div className="div6"><button >Custom</button></div>
+              <div className="div6">
+                <input type="text" placeholder="CUSTOM" className="custom-input" onChange={customPress}/></div>
           </div>
       </div>
       <div>
@@ -61,7 +72,7 @@ export default function Calculator({displayTotal}) {
               <p>Number of People</p>
               <p id='error-people'>Can't be zero</p>
           </div>
-        <input type="text" className="number-people" onChange={inputPeople}/>
+        <input type="text" className="number-people" onChange={inputPeople} placeholder='1'/>
       </div>  
     </div>
   );
