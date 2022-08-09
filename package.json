@@ -2,7 +2,7 @@
   "name": "tip-calculator",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://github.com/Danteie/tip-calculator-frontendmentor/",
+  "homepage":"https://danteie.github.io/tip-calculator-frontendmentor/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
