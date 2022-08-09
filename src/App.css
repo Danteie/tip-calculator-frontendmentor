@@ -10,13 +10,16 @@ button:hover{
   background-color:  hsl(186, 14%, 43%) !important;
 }
 
+body{
+  background-color: hsl(185, 41%, 84%);
+}
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: hsl(185, 41%, 84%);
 }
 
 .title-text{
@@ -38,4 +41,24 @@ button:hover{
 
 .white{
   color: white
+}
+
+@media only screen and (max-width: 600px) {
+  .calculator-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-sizing: content-box;
+    border-radius: 15px;
+    gap: 2rem
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 }
