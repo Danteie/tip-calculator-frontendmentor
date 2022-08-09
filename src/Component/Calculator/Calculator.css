@@ -1,5 +1,6 @@
 .calculator{
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -8,7 +9,7 @@
 .calculator input{
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: 3rem;
     border-radius: 10px;
     border: none;
     background-color: hsl(189, 41%, 97%);
@@ -27,6 +28,9 @@
 
 .custom-input{
     text-align: center;
+    color: hsl(183, 100%, 15%);
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .default{
@@ -51,7 +55,20 @@ div input {
     background-repeat: no-repeat;
     background-position: left center;
     background-origin: content-box;
-   
+}
+
+.bill-input{
+    background-image: url('./icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-origin: content-box;
+    color: hsl(183, 100%, 15%);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.bill-input:focus{
+    border-color: hsl(183, 100%, 15%);
 }
 
 #error-people{

@@ -26,7 +26,7 @@ export default function Display({total,totalPeople}) {
                     <h1 className="display-total">${total}</h1>
             </div>
         </div>
-        <button onClick={refreshPage}>Restart</button>
+        <button onClick={refreshPage} className='restart'>RESET</button>
     </div>
   );
 }

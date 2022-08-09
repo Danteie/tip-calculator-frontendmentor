@@ -39,7 +39,6 @@ export default function Calculator({displayTotal}) {
       customInput.value = ''
       setCustom(prevCustom => prevCustom = '')
     }
-  
     //button value
     const buttonValue = event.target.innerHTML;
     setButton(prevButton => prevButton = buttonValue)
@@ -51,9 +50,6 @@ export default function Calculator({displayTotal}) {
     if (defuatlStyle.length != 0) {
       defuatlStyle[0].classList.remove('default')
     }
-    
-   
-    
     //set custom tip input
     const customInput = event.target.value;
     setCustom(prevCustom => prevCustom = customInput)
@@ -78,7 +74,7 @@ export default function Calculator({displayTotal}) {
     <div className="calculator">
       <div>
         <p>Bill</p>
-        <input type="text" onChange={inputBill}/>
+        <input type="text" onChange={inputBill} className='bill-input'/>
       </div>
       <div>
         <p>Select Tip %</p>

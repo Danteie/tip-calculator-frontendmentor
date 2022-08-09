@@ -6,6 +6,10 @@
   font-family: 'Space Mono', monospace;
 }
 
+button:hover{
+  background-color:  hsl(186, 14%, 43%) !important;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -23,9 +27,11 @@
 
 .calculator-body{
   display: flex;
+  align-items: center;
   background-color: white;
+  box-sizing: content-box;
   width: 61.4%;
-  padding: 3rem;
+  padding: 4rem;
   border-radius: 15px;
   gap: 2rem
 }
