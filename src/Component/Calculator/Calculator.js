@@ -28,18 +28,33 @@ export default function Calculator({displayTotal}) {
   function buttonPress(event){
     //default style for button
     const defuatlStyle = document.getElementsByClassName('default');
-    defuatlStyle[0].classList.remove('default')
+    if (defuatlStyle.length != 0) {
+      defuatlStyle[0].classList.remove('default')
+    }
     const buttonStyle = event.target;
     buttonStyle.classList.add('default')
-
+    //remove custom input
+    const customInput = document.getElementsByClassName('custom-input')[0]
+    if (customInput.value) {
+      customInput.value = ''
+      setCustom(prevCustom => prevCustom = '')
+    }
+  
     //button value
     const buttonValue = event.target.innerHTML;
     setButton(prevButton => prevButton = buttonValue)
   }
 
   function customPress(event){
+    //remove default style for button
     const defuatlStyle = document.getElementsByClassName('default');
-    defuatlStyle[0].classList.remove('default')
+    if (defuatlStyle.length != 0) {
+      defuatlStyle[0].classList.remove('default')
+    }
+    
+   
+    
+    //set custom tip input
     const customInput = event.target.value;
     setCustom(prevCustom => prevCustom = customInput)
   }
@@ -47,6 +62,7 @@ export default function Calculator({displayTotal}) {
 
   useEffect(()=>{
     let total = ''
+
     if(!custom){
       total  = bill * parseInt(button)/100
     }else{
