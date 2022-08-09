@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Danteie/tip-calculator-frontendmentor/static/css/main.14352ed3.css",
+    "main.js": "/Danteie/tip-calculator-frontendmentor/static/js/main.ca223be3.js",
+    "static/js/787.364622ff.chunk.js": "/Danteie/tip-calculator-frontendmentor/static/js/787.364622ff.chunk.js",
+    "static/media/icon-dollar.svg": "/Danteie/tip-calculator-frontendmentor/static/media/icon-dollar.9f9be3534a9295a65957.svg",
+    "static/media/icon-person.svg": "/Danteie/tip-calculator-frontendmentor/static/media/icon-person.65bfd20465dd1d2cb58c.svg",
+    "index.html": "/Danteie/tip-calculator-frontendmentor/index.html",
+    "main.14352ed3.css.map": "/Danteie/tip-calculator-frontendmentor/static/css/main.14352ed3.css.map",
+    "main.ca223be3.js.map": "/Danteie/tip-calculator-frontendmentor/static/js/main.ca223be3.js.map",
+    "787.364622ff.chunk.js.map": "/Danteie/tip-calculator-frontendmentor/static/js/787.364622ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14352ed3.css",
+    "static/js/main.ca223be3.js"
+  ]
+}
